@@ -1,13 +1,12 @@
 import React from 'react';
+import Post from './components/Post';
 
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      Hello
-      </header>
+    <div >
+    <Post/>
     </div>
   );
 }
