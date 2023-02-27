@@ -31,15 +31,18 @@ const Post: FC = () => {
   return (
     <>
       <h1>All Blogs</h1>
+      <div className="container">
       {result.map((item, index) => {
         return (
-          <div key={index}>
-            <h3>{item.title}</h3>
-            <span>{item.likes}</span>
-            <p>{item.body}</p>
+          <div key={index} className="post">
+            <h2>{item.title}</h2>
+            <span>{`${item.likes} likes`}</span>
+            <p>{item.body.substring(0,250)}</p>
           </div>
+
         );
       })}
+      </div>
     </>
   );
 };
