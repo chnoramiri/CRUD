@@ -1,9 +1,6 @@
-import { FC, useEffect, useState } from "react";
-
-// interface Props {
-//   count: number;
-// }
-// const Post: FC<Props> = (props) => {
+import { Children, FC, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { isTemplateMiddle } from "typescript";
 
 const Post: FC = () => {
   type resultProps = {
@@ -30,18 +27,18 @@ const Post: FC = () => {
 
   return (
     <>
-      <h1>All Blogs</h1>
       <div className="container">
-      {result.map((item, index) => {
-        return (
-          <div key={index} className="post">
-            <h2>{item.title}</h2>
-            <span>{`${item.likes} likes`}</span>
-            <p>{item.body.substring(0,250)}</p>
-          </div>
-
-        );
-      })}
+        <h1>All Blogs</h1>
+        {result.map((item, index) => {
+          return (
+            <div key={index} className="post">
+              <h2>{item.title}</h2>
+              <span>{`${item.likes} likes`}</span>
+              <p>{item.body.substring(0, 250)}</p>
+              <Link to={`/postDetail/${item.id}`} state={item}>Read more</Link>
+            </div>
+          );
+        })}
       </div>
     </>
   );
