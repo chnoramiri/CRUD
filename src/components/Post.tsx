@@ -11,7 +11,7 @@ const Post: FC = () => {
 
   const [result, setResult] = useState<Data[]>([]);
 
-  let url: string = "http://localhost:3000/posts";
+  let url: string = "http://localhost:3000/posts?_sort=likes&_order=desc";
 
   useEffect(() => {
     const api = async () => {
