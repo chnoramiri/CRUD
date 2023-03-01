@@ -1,15 +1,15 @@
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Post: FC = () => {
-  type resultProps = {
+  type Data = {
     id: number;
     title: string;
     body: string;
     likes: number;
   };
 
-  const [result, setResult] = useState<resultProps[]>([]);
+  const [result, setResult] = useState<Data[]>([]);
 
   let url: string = "http://localhost:3000/posts";
 
@@ -22,19 +22,24 @@ const Post: FC = () => {
       setResult(jsonData);
     };
     api();
-  }, [url]);
+  }, []);
 
   return (
     <>
       <div className="container">
-        <h1>All Blogs</h1>
+        <div className="header">
+          <h1>All Blogs</h1>
+          <button  >Add a New Post</button>
+        </div>
         {result.map((item, index) => {
           return (
             <div key={index} className={`post${item.id}`}>
               <h2>{item.title}</h2>
               <span>{`${item.likes} likes`}</span>
               <p>{item.body.substring(0, 250)}</p>
-              <Link to={`/postDetail/${item.id}`} state={item}>Read more</Link>
+              <Link to={`/postDetail/${item.id}`}> 
+                Read more
+              </Link>
             </div>
           );
         })}

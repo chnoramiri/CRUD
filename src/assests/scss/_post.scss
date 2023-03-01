@@ -4,20 +4,21 @@
 @each $key, $value in util.$postBackground {
   .post#{$key} {
     @include util.set-background($value);
-    border-radius: 10px;
+    border-radius: 0.75em;
     padding: 1em;
-    box-shadow: 10px;
-    margin: 20px 0;
+    margin: 2em 0;
   }
   .post#{$key} > a {
     @include util.set-color($value);
   }
   .post#{$key} > h2 {
-    margin-top: 5px;
+    margin-top: 1em;
     margin-bottom: 0;
   }
+  .post#{$key} > p {
+    text-align: justify;
+  }
 }
-
 
 .container {
   width: 90%;
@@ -25,6 +26,20 @@
   margin: auto;
 }
 h1 {
-  margin-bottom: 50px;
-  margin-top: 30px;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+.header{
+  display: flex;
+ justify-content: space-between;
+ align-items: center;
+
+}
+.header>button{
+  height:3em;
+  width:10em;
+  border-radius: 0.75em;
+  font-size: 1em;
+  background-color: rgba(7, 196, 26, 0.652);
+  border: 0;
 }
