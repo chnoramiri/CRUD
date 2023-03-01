@@ -1,6 +1,5 @@
-import { Children, FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { isTemplateMiddle } from "typescript";
 
 const Post: FC = () => {
   type resultProps = {
@@ -31,7 +30,7 @@ const Post: FC = () => {
         <h1>All Blogs</h1>
         {result.map((item, index) => {
           return (
-            <div key={index} className="post">
+            <div key={index} className={`post${item.id}`}>
               <h2>{item.title}</h2>
               <span>{`${item.likes} likes`}</span>
               <p>{item.body.substring(0, 250)}</p>

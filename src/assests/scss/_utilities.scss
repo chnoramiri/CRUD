@@ -19,7 +19,11 @@ $postBackground: (
 }
 
 /* Set background & text color */
+
 @mixin set-background($color) {
   background-color: $color;
+  color: set-text-color($color);
+}
+@mixin set-color($color) {
   color: set-text-color($color);
 }
