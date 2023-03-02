@@ -29,7 +29,9 @@ const Post: FC = () => {
       <div className="container">
         <div className="header">
           <h1>All Blogs</h1>
-          <button  >Add a New Post</button>
+          <button className="createBtn">
+            <Link to="/create">Add a New Post</Link>
+          </button>
         </div>
         {result.map((item, index) => {
           return (
@@ -37,9 +39,7 @@ const Post: FC = () => {
               <h2>{item.title}</h2>
               <span>{`${item.likes} likes`}</span>
               <p>{item.body.substring(0, 250)}</p>
-              <Link to={`/postDetail/${item.id}`}> 
-                Read more
-              </Link>
+              <Link to={`/postDetail/${item.id}`}>Read more</Link>
             </div>
           );
         })}

@@ -4,15 +4,14 @@
 @each $key, $value in util.$postBackground {
   .post#{$key} {
     @include util.set-background($value);
-    border-radius: 0.75em;
+    @include util.set-border-radius;
     padding: 1em;
-    margin: 2em 0;
+    margin: 1em 0;
   }
   .post#{$key} > a {
     @include util.set-color($value);
   }
   .post#{$key} > h2 {
-    margin-top: 1em;
     margin-bottom: 0;
   }
   .post#{$key} > p {
@@ -21,25 +20,42 @@
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+  @include util.set-container;
 }
 h1 {
   margin-bottom: 2em;
   margin-top: 2em;
 }
-.header{
+.header {
   display: flex;
- justify-content: space-between;
- align-items: center;
-
+  justify-content: space-between;
+  align-items: center;
 }
-.header>button{
-  height:3em;
-  width:10em;
-  border-radius: 0.75em;
+//create post component
+.create-con {
+  @include util.set-container;
+  width: 50%;
+
+  & > * {
+    margin-bottom: 1em;
+  }
+}
+
+.create-btn {
+  @include util.set-border-radius;
+  height: 3em;
+  width: 10em;
   font-size: 1em;
   background-color: rgba(7, 196, 26, 0.652);
   border: 0;
+}
+
+.create-input {
+  @include util.set-border-radius;
+  border: 1px solid;
+  height: 30px;
+}
+.text-area {
+  @include util.set-border-radius;
+  padding: 10px;
 }

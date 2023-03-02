@@ -27,3 +27,17 @@ $postBackground: (
 @mixin set-color($color) {
   color: set-text-color($color);
 }
+@mixin set-border-radius(){
+  border-radius: 0.5em;
+}
+
+@mixin set-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+}
