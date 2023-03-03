@@ -29,7 +29,7 @@ const Post: FC = () => {
       <div className="container">
         <div className="header">
           <h1>All Blogs</h1>
-          <button className="createBtn">
+          <button className="create-btn">
             <Link to="/create">Add a New Post</Link>
           </button>
         </div>
@@ -38,7 +38,7 @@ const Post: FC = () => {
             <div key={index} className={`post${item.id}`}>
               <h2>{item.title}</h2>
               <span>{`${item.likes} likes`}</span>
-              <p>{item.body.substring(0, 250)}</p>
+              <p>{item.body.length>250?item.body.substring(0, 250):item.body}</p>
               <Link to={`/postDetail/${item.id}`}>Read more</Link>
             </div>
           );
