@@ -37,10 +37,22 @@
       "likes": 50
     },
     {
-      "id": 80,
+      "id": 7,
       "title": "wrwer",
       "likes": 80,
       "body": "wrewew"
+    },
+    {
+      "id": 8,
+      "title": "88787",
+      "likes": 80,
+      "body": "hjkhjhjkhkj"
+    },
+    {
+      "id": 9,
+      "title": "new blog",
+      "likes": 80,
+      "body": "this is new nblog"
     }
   ]
 }

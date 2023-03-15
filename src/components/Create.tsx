@@ -5,9 +5,9 @@ interface MyState {
   value: string;
   textAreaValue: string;
 }
-interface CreateProps {}
+interface CreateProps {lastID:number}
 
-const Create: FC<CreateProps> = () => {
+const Create: FC<CreateProps> = ({lastID}:CreateProps) => {
   const navigate = useNavigate();
   const [state, setState] = useState<MyState>({
     value: "",
@@ -25,9 +25,8 @@ const Create: FC<CreateProps> = () => {
   };
 
   const createFunc = () => {
-    let url: string = "http://localhost:3000/posts";
     let newPost = {
-      id: 80,
+      id: lastID++,
       title: value,
       likes: 80,
       body: textAreaValue,

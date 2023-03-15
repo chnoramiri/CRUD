@@ -7,6 +7,7 @@ const Post: FC = () => {
     title: string;
     body: string;
     likes: number;
+    color: string;
   };
 
   const [result, setResult] = useState<Data[]>([]);
@@ -19,6 +20,17 @@ const Post: FC = () => {
         method: "Get",
       });
       const jsonData = await data.json();
+      //Generate colors
+      let color: string = "";
+      for (let i = 0; i <= jsonData.length - 1; i++) {
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        const alpha = Math.random();
+
+        color = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+        jsonData[i].color = color;
+      }
       setResult(jsonData);
     };
     api();
@@ -35,11 +47,21 @@ const Post: FC = () => {
         </div>
         {result.map((item, index) => {
           return (
-            <div key={index} className={`post${item.id}`}>
+            <div
+              key={index}
+              className="post"
+              style={{ backgroundColor: item.color }}
+            >
               <h2>{item.title}</h2>
               <span>{`${item.likes} likes`}</span>
-              <p>{item.body.length>250?item.body.substring(0, 250):item.body}</p>
-              <Link to={`/postDetail/${item.id}`}>Read more</Link>
+              <p>
+                {item.body.length > 250
+                  ? item.body.substring(0, 250)
+                  : item.body}
+              </p>
+              <Link to={`/postDetail/${item.id}`} state={{ item: item }}>
+                Read more
+              </Link>
             </div>
           );
         })}
@@ -49,3 +71,4 @@ const Post: FC = () => {
 };
 
 export default Post;
+export const myVariable = "red";

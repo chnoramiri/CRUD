@@ -1,22 +1,17 @@
 @use "./utilities" as util;
 @use "sass:color";
 
-@each $key, $value in util.$postBackground {
-  .post#{$key} {
-    @include util.set-background($value);
-    @include util.set-border-radius;
-    padding: 1em;
-    margin: 1em 0;
-  }
-  .post#{$key} > a {
-    @include util.set-color($value);
-  }
-  .post#{$key} > h2 {
-    margin-bottom: 0;
-  }
-  .post#{$key} > p {
-    text-align: justify;
-  }
+.post {
+  @include util.set-border-radius;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.post > h2 {
+  margin-bottom: 0;
+}
+.post > p {
+  text-align: justify;
 }
 
 .container {
@@ -48,7 +43,9 @@ h1 {
   font-size: 1em;
   background-color: rgba(7, 196, 26, 0.652);
   border: 0;
-  a:link{text-decoration: none}
+  a:link {
+    text-decoration: none;
+  }
 }
 
 .create-input {

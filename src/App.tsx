@@ -9,8 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Post />} />
       <Route path="/postDetail/:id" element={<PostDetail />} />
-      <Route path="/create" element={<Create />} />
-
+      <Route path="/create" element={<Create lastID={0} />} />
       {/* <Route path="*" element={<NoMatch />} /> */}
     </Routes>
   );
