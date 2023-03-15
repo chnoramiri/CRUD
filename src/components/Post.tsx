@@ -70,12 +70,17 @@ const Post: FC = () => {
                 <Link to={`/postDetail/${item.id}`} state={{ item: item }}>
                   Read more
                 </Link>
-                <button
-                  className="delete-btn "
-                  onClick={() => deleteBlog(item.id)}
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    className="delete-btn "
+                    onClick={() => deleteBlog(item.id)}
+                  >
+                    Delete
+                  </button>
+                  <button className="edit-btn ">
+                    <Link to="/create" state={{item:item}}>Edit</Link>
+                  </button>
+                </div>
               </div>
             </div>
           );

@@ -26,8 +26,8 @@ h1 {
   justify-content: space-between;
   align-items: center;
 }
-//create post component
-.create-con {
+//insert post component
+.insert-con {
   @include util.set-container;
   width: 50%;
 
@@ -36,7 +36,7 @@ h1 {
   }
 }
 
-.create-btn {
+.insert-btn {
   @include util.set-border-radius;
   height: 3em;
   width: 10em;
@@ -48,7 +48,7 @@ h1 {
   }
 }
 
-.create-input {
+.insert-input {
   @include util.set-border-radius;
   border: 1px solid;
   height: 30px;
@@ -66,4 +66,16 @@ h1 {
   font-size: 1em;
   background-color: rgba(240, 5, 13, 0.652);
   border: 0;
+}
+//Edit
+.edit-btn {
+  @include util.set-border-radius;
+  height: 1.5em;
+  width: 5em;
+  font-size: 1em;
+  background-color: rgba(85, 150, 224, 0.652);
+  border: 0;
+  a:link {
+    text-decoration: none;
+  }
 }
