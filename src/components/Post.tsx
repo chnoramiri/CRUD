@@ -12,34 +12,41 @@ const Post: FC = () => {
 
   const [result, setResult] = useState<Data[]>([]);
 
-  let url: string = "http://localhost:3000/posts?_sort=likes&_order=desc";
+  let url: string = "http://localhost:3000/posts";
+  const FetchData = async () => {
+    const data = await fetch(`${url}?_sort=likes&_order=desc`, {
+      method: "Get",
+    });
+    const jsonData = await data.json();
+    //Generate colors
+    let color: string = "";
+    for (let i = 0; i <= jsonData.length - 1; i++) {
+      const red = Math.floor(Math.random() * 256);
+      const green = Math.floor(Math.random() * 256);
+      const blue = Math.floor(Math.random() * 256);
+      const alpha = Math.random();
 
+      color = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+      jsonData[i].color = color;
+    }
+    setResult(jsonData);
+  };
   useEffect(() => {
-    const api = async () => {
-      const data = await fetch(url, {
-        method: "Get",
-      });
-      const jsonData = await data.json();
-      //Generate colors
-      let color: string = "";
-      for (let i = 0; i <= jsonData.length - 1; i++) {
-        const red = Math.floor(Math.random() * 256);
-        const green = Math.floor(Math.random() * 256);
-        const blue = Math.floor(Math.random() * 256);
-        const alpha = Math.random();
-
-        color = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
-        jsonData[i].color = color;
-      }
-      setResult(jsonData);
-    };
-    api();
+    FetchData();
   }, []);
+  const deleteBlog = async (id: number) => {
+    const res = await fetch(`${url}/${id}`, {
+      method: "DELETE",
+    });
+    if (res.status == 200) {
+      FetchData();
+    }
+  };
 
   return (
     <>
       <div className="container">
-        <div className="header">
+        <div className="justify-items ">
           <h1>All Blogs</h1>
           <button className="create-btn">
             <Link to="/create">Add a New Post</Link>
@@ -59,9 +66,17 @@ const Post: FC = () => {
                   ? item.body.substring(0, 250)
                   : item.body}
               </p>
-              <Link to={`/postDetail/${item.id}`} state={{ item: item }}>
-                Read more
-              </Link>
+              <div className="justify-items ">
+                <Link to={`/postDetail/${item.id}`} state={{ item: item }}>
+                  Read more
+                </Link>
+                <button
+                  className="delete-btn "
+                  onClick={() => deleteBlog(item.id)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           );
         })}
@@ -71,4 +86,3 @@ const Post: FC = () => {
 };
 
 export default Post;
-export const myVariable = "red";

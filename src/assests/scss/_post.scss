@@ -21,7 +21,7 @@ h1 {
   margin-bottom: 2em;
   margin-top: 2em;
 }
-.header {
+.justify-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,4 +56,14 @@ h1 {
 .text-area {
   @include util.set-border-radius;
   padding: 10px;
+}
+
+//Delete
+.delete-btn {
+  @include util.set-border-radius;
+  height: 1.5em;
+  width: 5em;
+  font-size: 1em;
+  background-color: rgba(240, 5, 13, 0.652);
+  border: 0;
 }
