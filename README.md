@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# CRUD Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is to provide a simple CRUD application that demonstrates the use of React, TypeScript, Sass, and JSON-Server and plus manage the whole tasks by AzureDevops. The application allows users to manage data records using a web interface.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+This project was built using the following technologies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React: A JavaScript library for building user interfaces
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript
+- Sass: A CSS preprocessor that adds features and functionality to CSS
+- JSON-Server: A fake REST API for prototyping and mocking
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Create a new data record
+- Read an existing data record
+- Update an existing data record
+- Delete an existing data record
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get started with this project, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 1. Clone the repository to your local machine
+ 2. Install dependencies using npm install
+ 3. Start the JSON-Server using npm run json-server
+ 4. Start the React app using npm start
+ 5. Open the application in your browser at http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Contributions to this project are welcome. To contribute, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ 1. Fork the repository
+ 2. Create a new branch
+ 3. Make your changes and commit them
+ 4. Push your changes to your forked repository
+ 5. Open a pull request
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgments
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- The React documentation: https://reactjs.org/docs/getting-started.html
+- The TypeScript documentation: https://www.typescriptlang.org/docs
+- The Sass documentation: https://sass-lang.com/documentation
+- The JSON-Server documentation: https://github.com/typicode/json-server
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Conclusion
 
-## Learn More
+Through this project, I gained valuable experience in using TypeScript and Sass to improve the efficiency and maintainability of my code. I also utilized Azure DevOps for task management, which helped me stay organized and focused throughout the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+With TypeScript, I was able to add static typing to my React components, making them more robust and easier to maintain. Sass provided me with advanced features like variables, which improved my code's efficiency and made it more organized. While I faced a challenge trying to pass a value from TypeScript to Sass, I was able to find a solution using CSS custom properties.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In summary, TypeScript and Sass are essential tools for web development that improve code quality and efficiency. By utilizing task management tools like Azure DevOps, developers can stay organized and focused on their project goals. I am excited to continue using these tools in future projects to build even better applications.
